@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const transformDataController = require('./controllers/transformDataController');
+const transformDataController = require('./src/controllers/transformDataController');
 
 
 // Middleware pour parser les données JSON
