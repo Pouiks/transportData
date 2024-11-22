@@ -5,7 +5,7 @@ const transformData = (req, res) => {
     try {
         // Exemple : Transformation de données reçues
         const inputData = req.body;
-
+        console.log('Donnée recu: ',inputData)
         if (!inputData || Object.keys(inputData).length === 0) {
             return res.status(400).json({ error: 'Aucune donnée reçue.' });
         }
