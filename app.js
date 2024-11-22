@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
+const transformDataController = require('./controllers/transformDataController');
+
 
 // Middleware pour parser les données JSON
 app.use(express.json());
@@ -13,6 +16,7 @@ app.post('/log', (req, res) => {
     console.log('Donnée reçue:', req.body); // Log les données dans la console
     res.status(200).send('Donnée reçue et loggée.');
 });
+app.post('/transform', transformDataController);
 
 // Lancer le serveur
 const PORT = 3000; // Choisissez un port
