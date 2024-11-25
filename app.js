@@ -13,10 +13,9 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization'] // Autorise des en-têtes spécifiques
 }));
 
-app.use(express.json({ limit: '100mb' })); // Augmente la limite à 100 Mo
-app.use(express.urlencoded({ limit: '100mb', extended: true }));
-// app.use(express.limit('100M'));
-// Route POST pour logger les données reçues
+app.use(express.json({ limit: '200mb' })); // 200 Mo pour les JSON
+app.use(express.urlencoded({ limit: '200mb', extended: true }));
+
 app.post('/log', (req, res) => {
     console.log('Donnée reçue:', req.body); // Log les données dans la console
     res.status(200).send('Donnée reçue et loggée.');
