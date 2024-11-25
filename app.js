@@ -13,9 +13,9 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization'] // Autorise des en-têtes spécifiques
 }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json({ limit: '100mb' })); // Augmente la limite à 100 Mo
-app.use(express.urlencoded({ limit: '100mb', extended: true }));
+app.use(bodyParser.urlencoded({limit: '100mb', extended: true }));
+// app.use(express.json({ limit: '100mb' })); // Augmente la limite à 100 Mo
+// app.use(express.urlencoded({ limit: '100mb', extended: true }));
 // app.use(express.limit('100M'));
 // Route POST pour logger les données reçues
 app.post('/log', (req, res) => {
