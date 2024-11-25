@@ -34,7 +34,7 @@ const updateData = async (req, res) => {
         .catch(error => console.error('Erreur lors de l\'envoi des données au client:', error));
 }
 
-updateData();
-// sendDataToClient(data);
+
+
 
 module.exports = { sendDataToClient, updateData };

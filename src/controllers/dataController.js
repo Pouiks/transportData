@@ -8,7 +8,6 @@ const transformData = (req, res) => {
     try {
         // Exemple : Transformation de données reçues
         const inputData = req.body;
-        console.log('Donné de la request: ',req)
         console.log('Donnée recu: ',inputData)
 
         sendDataToClient(inputData)
@@ -22,9 +21,11 @@ const sendDataToClient = (dataToSend) => {
     fetch(process.env.CLIENT_URL, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': process.env.API_KEY
+
         },
-        body: dataToSend
+        body: JSON.stringify(dataToSend)
     })
         .then(response => response.json())
         .then(data => console.log('Réponse du client:', data))
