@@ -23,7 +23,7 @@ app.post('/log', (req, res) => {
 });
 
 // Route POST pour transformer les données
-app.post('/transform', transformData);
+app.post('/transform', express.json({ limit: '50mb' }), transformData);
 app.patch('/update', updateData);
 
 
