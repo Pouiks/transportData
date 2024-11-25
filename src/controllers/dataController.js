@@ -1,6 +1,5 @@
 // src/controllers/dataController.js
 require('dotenv').config();
-const data = require('./data.json')
 
 
 const transformData = (req, res) => {
