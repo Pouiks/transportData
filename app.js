@@ -11,8 +11,8 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Autorise toutes les méthodes
     allowedHeaders: ['Content-Type', 'Authorization'] // Autorise des en-têtes spécifiques
 }));
-app.use(express.json({ limit: '12mb' })); // Augmente la limite à 10 Mo
-app.use(express.urlencoded({ limit: '12mb', extended: true }));
+app.use(express.json({ limit: '15mb' })); // Augmente la limite à 15 Mo
+app.use(express.urlencoded({ limit: '15mb', extended: true }));
 // Route POST pour logger les données reçues
 app.post('/log', (req, res) => {
     console.log('Donnée reçue:', req.body); // Log les données dans la console
