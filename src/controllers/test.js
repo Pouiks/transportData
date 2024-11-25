@@ -10,7 +10,7 @@ const sendDataToClient = async (dataToSend) => {
             'Content-Type': 'application/json',
             'Authorization': process.env.API_KEY
         },
-        body: dataToSend // Convertir en JSON string
+        body: JSON.stringify(dataToSend)// Convertir en JSON string
     })
         .then(response => response.json())
         .then(data => console.log('Réponse du client:', data))
