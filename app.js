@@ -13,7 +13,7 @@ app.use(cors({
 }));
 app.use(express.json({ limit: '100mb' })); // Augmente la limite à 100 Mo
 app.use(express.urlencoded({ limit: '100mb', extended: true }));
-app.use(express.limit('100M'));
+// app.use(express.limit('100M'));
 // Route POST pour logger les données reçues
 app.post('/log', (req, res) => {
     console.log('Donnée reçue:', req.body); // Log les données dans la console
