@@ -1,7 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const { transformData } = require('./src/controllers/dataController');
+const { transformData, updateData } = require('./src/controllers/dataController');
 
 // Middleware pour parser les données JSON
 app.use(express.json());
@@ -19,6 +20,8 @@ app.post('/log', (req, res) => {
 
 // Route POST pour transformer les données
 app.post('/transform', transformData);
+app.patch('/update', updateData);
+
 
 // Lancer le serveur
 const PORT = 3000; // Choisissez un port

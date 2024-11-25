@@ -31,4 +31,21 @@ const sendDataToClient = (dataToSend) => {
         .catch(error => console.error('Erreur lors de l\'envoi des données au client:', error));
 }
 
-module.exports = { transformData };
+const updateData = async (req, res) => {
+    const inputData = req.body;
+    fetch(process.env.CLIENT_URL, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': process.env.API_KEY
+        },
+        body: JSON.stringify(inputData)
+    })
+        .then(res => res.json())
+        .then(data => console.log('Réponse du client:', data))
+        .catch(error => console.error('Erreur lors de l\'envoi des données au client:', error));
+}
+
+
+
+module.exports = { transformData, updateData };
